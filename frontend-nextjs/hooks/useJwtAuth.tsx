@@ -113,19 +113,17 @@ const useJwtAuth = (props?: AuthProps) => {
 
     useEffect(() => {
         if (status === AuthType.WAIT && match()) {
-            let verified = false;
             if (accessToken) {
-                verified = JwtUtils.verify(accessToken);
-            }
-            
-            if (!verified) {
-                if (refreshToken) {
-                    refresh();
-                }
-                else {
-                    signout(() => {
-                        props?.onAuthFailure?.()
-                    });
+                let verified = JwtUtils.verify(accessToken);
+                if (!verified) {
+                    if (refreshToken) {
+                        refresh();
+                    }
+                    else {
+                        signout(() => {
+                            props?.onAuthFailure?.()
+                        });
+                    }
                 }
             }
         }
