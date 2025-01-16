@@ -7,6 +7,7 @@ import ErrorBoundary from "./errorBoundary";
 import Fallback from "./fallback";
 import { ModalProvider } from "./modal";
 import OfflineObserver from "./offline";
+import { ToastProvider } from "./toast";
 
 const Composer = ({
     children, components
@@ -30,6 +31,7 @@ const Engine = ({
                 CookiesProvider,
                 JwtProvider,
                 ModalProvider,
+                ToastProvider,
                 OfflineObserver
             ]}>
                 <BaseLayout>{children}</BaseLayout>
