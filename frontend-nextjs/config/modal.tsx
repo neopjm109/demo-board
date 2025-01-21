@@ -488,4 +488,4 @@ const ModalProvider = ({
     )
 }
 
-export { ModalContext, ModalProvider, useModalContext, ModalShape, ModalPosition, Alert, Confirm };
+export { ModalContext, ModalProvider, useModalContext, ModalShape, ModalDirection, ModalPosition };
